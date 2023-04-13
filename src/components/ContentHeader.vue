@@ -26,7 +26,7 @@ import { useStore } from "vuex";
 import { State } from "./store";
 import { Email } from "./store";
 
-const URL = "http://localhost:8080/search/";
+const URL = "/search/";
 
 export default defineComponent({
   name: "ContentHeader",
