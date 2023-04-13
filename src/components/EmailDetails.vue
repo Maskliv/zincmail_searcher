@@ -1,5 +1,7 @@
 <template>
-  <div className="flex flex-col bg-dark-500 w-6/12 ml-1 px-2 rounded-3xl">
+  <div
+    className="flex flex-col bg-dark-500 w-6/12 ml-1 px-2 rounded-3xl overflow-y-auto hide-scrollbar"
+  >
     <span className="px-5 text-xs text-light-100 font-light mt-6">{{
       selectedEmail != undefined ? dateToString(selectedEmail.Date) : ""
     }}</span>
@@ -7,13 +9,15 @@
       selectedEmail != undefined ? selectedEmail.Subject : ""
     }}</span>
     <span className="px-5 text-sm text-light-100 font-light mb-2">
-      from:
-      {{ selectedEmail != undefined ? " " + selectedEmail.From : "" }}</span
+      {{
+        selectedEmail != undefined ? "from: " + selectedEmail.From : ""
+      }}</span
     >
     <span className="px-5 text-sm text-light-100 font-light mb-2 break-words">
-      to:
       {{
-        selectedEmail != undefined ? listToString(selectedEmail.To) : ""
+        selectedEmail != undefined
+          ? "to: " + listToString(selectedEmail.To)
+          : ""
       }}</span
     >
     <span
@@ -70,4 +74,24 @@ export default defineComponent({
 });
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+.overflow-y-auto {
+  overflow-y: auto !important;
+}
+
+.hide-scrollbar:hover::-webkit-scrollbar {
+  width: 0.15em;
+}
+.hide-scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: #7a7d89;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  background-color: #383b47;
+  width: 0.15em;
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #383b47;
+}
+</style>

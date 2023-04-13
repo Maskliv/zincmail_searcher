@@ -14,7 +14,7 @@
         <div
           className="flex flex-col w-8/12 text-mid-xs text-light-400 font-medium mr-1"
         >
-          <spam className="truncate ...">from: {{ email.From }}</spam>
+          <span className="truncate ...">from: {{ email.From }}</span>
           <p className="truncate ...">
             to: {{ email.To[0] }}
             {{
@@ -30,9 +30,9 @@
           {{ dateToString(email.Date) }}
         </span>
       </div>
-      <spam className="clamp text-xs font-normal text-light-400 mt-2 w-full">{{
+      <span className="clamp text-xs font-normal text-light-400 mt-2 w-full">{{
         email.Body
-      }}</spam>
+      }}</span>
     </div>
   </div>
 </template>

@@ -36,7 +36,6 @@ export default defineComponent({
   },
   setup() {
     const store = useStore<State>();
-    console.log(store);
     let emails = computed<Email[]>(() => store.getters.emailsList);
 
     function selectEmail(selectedEmail: Email) {
